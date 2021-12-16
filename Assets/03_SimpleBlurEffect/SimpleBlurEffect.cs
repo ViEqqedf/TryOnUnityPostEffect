@@ -19,12 +19,12 @@ public class SimpleBlurEffect : PostEffectBase
         {
             //申请RT，RT的分辨率按downSample降低
             RenderTexture rt1 = RenderTexture.GetTemporary(
-                source.width >> downSample, source.height >> downSample, 
+                source.width >> downSample, source.height >> downSample,
                 0, source.format);
             RenderTexture rt2 = RenderTexture.GetTemporary(
-                source.width >> downSample, source.height >> downSample, 
+                source.width >> downSample, source.height >> downSample,
                 0, source.format);
-            
+
             //将原图拷贝到降低分辨率的RT上
             Graphics.Blit(source, rt1);
 
@@ -35,10 +35,10 @@ public class SimpleBlurEffect : PostEffectBase
                 Graphics.Blit(rt1, rt2, _Material);
                 Graphics.Blit(rt2, rt1, _Material);
             }
-            
-            //把结果拷贝到目标RT 
+
+            //把结果拷贝到目标RT
             Graphics.Blit(rt1, destination);
-            
+
             RenderTexture.ReleaseTemporary(rt1);
             RenderTexture.ReleaseTemporary(rt2);
         }
