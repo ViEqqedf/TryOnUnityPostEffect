@@ -41,7 +41,6 @@ Shader "Custom/GaussianBlur"
         return o;
     }
 
-
 	//fragment shader
 	fixed4 frag_blur(v2f_blur i) : SV_Target
 	{
