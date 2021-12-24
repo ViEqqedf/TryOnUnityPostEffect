@@ -40,6 +40,7 @@ public class WaterWaveEffect : PostEffectBase {
             Vector2 mousePos = Input.mousePosition;
             //将mousePos转化为（0，1）区间
             startPos = new Vector4(mousePos.x / Screen.width, mousePos.y / Screen.height, 0, 0);
+            Debug.Log(mousePos);
             waveStartTime = Time.time;
         }
 
