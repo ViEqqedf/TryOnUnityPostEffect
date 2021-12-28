@@ -14,7 +14,7 @@ Shader "Custom/ColorAdjustEffect"
         Pass
         {
             ZTest Always Cull Off ZWrite Off
-            
+
             CGPROGRAM
 
             sampler2D _MainTex;
